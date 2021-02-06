@@ -1,4 +1,4 @@
-import '../global.d';
+import '../apollo-express-kernel.d';
 import { ApolloServer } from 'apollo-server-express';
 import { buildFederatedSchema } from '@apollo/federation';
 import { Kernel } from '@micra/kernel';
