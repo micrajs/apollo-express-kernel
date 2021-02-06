@@ -3,19 +3,20 @@ import { ApolloServer } from 'apollo-server-express';
 import { buildFederatedSchema } from '@apollo/federation';
 import { Kernel } from '@micra/kernel';
 import gql from 'graphql-tag';
-import type { Express } from 'express';
+import type { Express, RequestHandler } from 'express';
 
 export class ApolloExpressKernel extends Kernel {
   protected server!: Express;
 
   boot() {
-    this.server = use('server');
-    const graphql = use('graphql');
+    const config = this.container.use('config');
+    this.server = this.container.use('server');
+    const graphql = this.container.use('graphql');
     const graphqlConfig = config('graphql');
     const options = { ...graphqlConfig.options };
     const serverConfig = config('server');
 
-    serverConfig.middlewares.forEach((middleware) => {
+    serverConfig.middlewares.forEach((middleware: RequestHandler) => {
       this.server.use(middleware);
     });
 
