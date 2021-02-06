@@ -19,7 +19,24 @@ Micra Kernel to run an Express-based Apollo GraphQL server.
 ## Installation
 
 ```sh
-yarn add @micra/apollo-kernel
+yarn add @micra/apollo-express-kernel
+```
+
+## Usage
+
+### Config file
+
+In your `app` config:
+
+```typescript
+import app from '@micra/application';
+import { ApolloExpressKernel } '@micra/apollo-express-kernel';
+import type { AppConfig } from '@micra/application';
+
+app.config.set<AppConfig>('app', {
+  kernel: ApolloKernel,
+  // ...rest
+});
 ```
 
 ## Requirements

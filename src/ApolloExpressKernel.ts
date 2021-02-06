@@ -5,7 +5,7 @@ import { Kernel } from '@micra/kernel';
 import gql from 'graphql-tag';
 import type { Express } from 'express';
 
-export class ApolloKernel extends Kernel {
+export class ApolloExpressKernel extends Kernel {
   protected server!: Express;
 
   boot() {
