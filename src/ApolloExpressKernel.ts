@@ -12,9 +12,9 @@ export class ApolloExpressKernel extends Kernel {
     const config = this.container.use('config');
     this.server = this.container.use('server');
     const graphql = this.container.use('graphql');
-    const graphqlConfig = config('graphql');
+    const graphqlConfig = config.get('graphql');
     const options = { ...graphqlConfig.options };
-    const serverConfig = config('server');
+    const serverConfig = config.get('server');
 
     serverConfig.middlewares.forEach((middleware: RequestHandler) => {
       this.server.use(middleware);
