@@ -1,14 +1,13 @@
 {
   "name": "@micra/apollo-express-kernel",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Olavo Amorim Santos<contact@micra.dev>",
   "license": "MIT",
   "main": ".micra/index.cjs.js",
   "module": ".micra/index.js",
   "types": ".micra/index.d.ts",
   "files": [
-    ".micra/**/*",
-    "apollo-express-kernel.d.ts"
+    ".micra/**/*"
   ],
   "scripts": {
     "build": "yarn rimraf .micra && yarn rollup -c .config/build/rollup.config.js",

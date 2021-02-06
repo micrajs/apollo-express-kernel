@@ -5,8 +5,8 @@ declare namespace Application {
   }
 
   interface Config {
-    server: import('./src/types').ServerConfig;
-    graphql: import('./src/types').GraphQLConfig;
+    server: import('./types').ServerConfig;
+    graphql: import('./types').GraphQLConfig;
   }
 
   interface EnvironmentVariables {
