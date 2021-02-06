@@ -54,10 +54,8 @@ export class ApolloExpressKernel extends Kernel {
     });
 
     app.keepAliveTimeout =
-      Number(process.env.PORT) +
-      Number(process.env.KEEP_ALIVE_TIMEOUT);
+      Number(process.env.PORT) + Number(process.env.KEEP_ALIVE_TIMEOUT);
     app.headersTimeout =
-      Number(process.env.PORT) +
-      Number(process.env.HEADERS_TIMEOUT);
+      Number(process.env.PORT) + Number(process.env.HEADERS_TIMEOUT);
   }
 }
