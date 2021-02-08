@@ -34,7 +34,7 @@ import { ApolloExpressKernel } '@micra/apollo-express-kernel';
 import type { AppConfig } from '@micra/application';
 
 app.config.set<AppConfig>('app', {
-  kernel: ApolloKernel,
+  kernel: ApolloExpressKernel,
   // ...rest
 });
 ```
