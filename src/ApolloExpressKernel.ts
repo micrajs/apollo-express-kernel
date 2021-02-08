@@ -24,10 +24,6 @@ export class ApolloExpressKernel extends Kernel {
       options.cache = this.container.use<any>('cache');
     }
 
-    if (this.container.has('graphql/context')) {
-      options.cache = this.container.use<any>('graphql/context');
-    }
-
     const apolloServer = new ApolloServer({
       ...options,
       schema: buildFederatedSchema([
